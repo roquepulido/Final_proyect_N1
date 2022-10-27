@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    max-width: 1440px;
+    margin: 0 auto;
+    font-family: 'Epilogue', sans-serif; 
+    font-weight: 500;
+    color: hsl(0, 0%, 41%);
+}
+h1{
+    color: hsl(0, 0%, 8%);
+    font-weight: 700;
+}
+ul{
+    list-style: none;
+}
+header{
+height: 10vh;
+}
+nav{height: 100%;}
+header > nav{
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left-nav > ul {
+    display: flex;
+    align-items: center;  
+    gap: 3rem;
+}
+.submenu{
+    display: none;
+}
+.logo{
+    font-weight: 700;
+    font-size: 2.3rem;
+    color:hsl(0, 0%, 8%);
+}
