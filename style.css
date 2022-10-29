@@ -70,8 +70,13 @@ header > nav {
   /* display: none; */
   display: flex;
   flex-direction: column;
-  position: relative;
-
+  align-items: center;
+  gap:1rem;
+  position: absolute;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 0 20px;
+  border-radius: 0.5rem;
+  padding: 24px;
 }
 .logo {
   font-weight: 700;
