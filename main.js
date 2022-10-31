@@ -39,25 +39,3 @@ function cambio(id) {
     console.log("Mostrar");
   }
 }
-
-// function cambio(menu) {
-//   let submenu = menu.getElementsByClassName("submenu");
-//   let flecha = menu.getElementsByClassName("flecha");
-
-//   if (activo) {
-//     submenu[0].classList.toggle("visible");
-//     flecha[0].classList.toggle("flecha-up");
-//     activo = false;
-//     console.log("Ocultar");
-//   } else {
-//     submenu[0].classList.toggle("visible");
-//     flecha[0].classList.toggle("flecha-up");
-//     activo = true;
-//     console.log("Mostrar");
-//   }
-// }
-// function toggleSubmenu(e) {
-//     console.log(e);
-//     e.target.parentElement.children[0].children[0].classList.toggle("flecha-up");
-//     e.target.classList.toggle("visible");
-//   }

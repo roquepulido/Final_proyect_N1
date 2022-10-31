@@ -161,15 +161,8 @@ header > nav {
   display: flex;
   gap: 2.5rem;
 }
-/* .visible {
-  opacity: 1;
-} */
-/* .flecha-up {
-  content: url(/img/icon-arrow-up.svg);
-} */
-
 .active > span > img{
-  content: url(/img/icon-arrow-up.svg);
+  content: url(./img/icon-arrow-up.svg);
 }
 .active > ul {
   opacity: 1;
