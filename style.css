@@ -4,7 +4,7 @@
   margin: 0;
 }
 body {
-  max-width: 1440px;
+  width: 1440px;
   margin: 0 auto;
   font-family: "Epilogue", sans-serif;
   font-weight: 500;
@@ -57,27 +57,52 @@ header > nav {
   font-size: 0.9rem;
   font-weight: 700;
 }
-.pointer:hover {
+.pointer:hover{
   color: hsl(0, 0%, 8%);
   cursor: pointer;
 }
+
 .left-nav > ul {
   display: flex;
   align-items: center;
   gap: 3rem;
 }
+.menu {
+  position: relative;
+}
 .submenu {
-  /* display: none; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:1rem;
+  gap: 1rem;
   position: absolute;
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 0 20px;
   border-radius: 0.5rem;
   padding: 24px;
+  top: 2rem;
+  transition: .5s;
+  opacity: 0;
+  align-items: flex-start;
 }
+.submenu a{
+  text-decoration: none;
+  color: hsl(0, 0%, 41%);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.submenu a:hover{
+   color: hsl(0, 0%, 8%);
+}
+.submenu.feat {
+  right: 0px;
+  width: 150px;
+}
+.submenu.comp {
+  left: 0px;
+  width: 120px;
+} 
 .logo {
   font-weight: 700;
   font-size: 2.3rem;
@@ -135,4 +160,17 @@ header > nav {
 .clients-hero {
   display: flex;
   gap: 2.5rem;
+}
+/* .visible {
+  opacity: 1;
+} */
+/* .flecha-up {
+  content: url(/img/icon-arrow-up.svg);
+} */
+
+.active > span > img{
+  content: url(/img/icon-arrow-up.svg);
+}
+.active > ul {
+  opacity: 1;
 }
