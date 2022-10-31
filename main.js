@@ -3,28 +3,30 @@ let activo = false;
 //Listener menu
 for (let menu of menus) {
   menu.addEventListener("click", function () {
+    if (activo) {
       clearMenus();
-    cambio(menu.id);
+      activo = false;
+    } else {
+      clearMenus();
+      cambio(menu.id);
+    }
   });
   let sub = menu.getElementsByClassName("submenu");
   sub[0].addEventListener("mouseleave", function (e) {
-    if (activo){
-
-        e.target.parentElement.classList.remove("active");
-        activo = false;
+    if (activo) {
+      e.target.parentElement.classList.remove("active");
+      activo = false;
     }
-   
   });
 }
 function clearMenus() {
- if (activo){
+  if (activo) {
     let elementos = document.getElementsByClassName("active");
-    for(elemento of elementos){
-        
-        elemento.classList.remove("active");
+    for (let elemento of elementos) {
+      elemento.classList.remove("active");
     }
     activo = false;
- }
+  }
 }
 function cambio(id) {
   let elem = document.getElementById(id);
