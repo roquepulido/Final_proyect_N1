@@ -1,43 +1,55 @@
 const menus = document.getElementsByClassName("menu");
 let activo = false;
+let activoId = "";
 //Listener menu
 for (let menu of menus) {
   menu.addEventListener("click", function () {
-    if (activo) {
-      clearMenus();
-      activo = false;
-    } else {
-      clearMenus();
+    if (!activo) {
       cambio(menu.id);
+    } else {
+      if (menu.id === activoId) {
+        clearMenus();
+        activo = false;
+      } else {
+        clearMenus();
+        activo = false;
+        cambio(menu.id);
+      }
     }
   });
+
   let sub = menu.getElementsByClassName("submenu");
   sub[0].addEventListener("mouseleave", function (e) {
-    if (activo) {
-      e.target.parentElement.classList.remove("active");
-      activo = false;
-    }
+    clearMenus();
+    activo = false;
+    activoId = "";
   });
 }
-function clearMenus() {
-  if (activo) {
-    let elementos = document.getElementsByClassName("active");
-    for (let elemento of elementos) {
-      elemento.classList.remove("active");
-    }
+
+window.addEventListener("click", allclear);
+
+function allclear(event) {
+  if (event.target.id !== "company" && event.target.id !== "features") {
+    clearMenus();
     activo = false;
+    activoId = "";
   }
 }
+
+function clearMenus() {
+  document.getElementById("features").classList.remove("active");
+  document.getElementById("company").classList.remove("active");
+}
+
 function cambio(id) {
   let elem = document.getElementById(id);
-
-  if (activo) {
-    elem.classList.remove("active");
-    activo = false;
-    console.log("Ocultar");
-  } else {
+  if (!activo) {
     elem.classList.add("active");
     activo = true;
-    console.log("Mostrar");
+    activoId = id;
+  } else {
+    clearMenus();
+    activo = false;
+    activoId = "";
   }
 }
