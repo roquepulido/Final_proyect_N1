@@ -82,6 +82,7 @@ header > nav {
   padding: 24px;
   top: 2rem;
   transition: .5s;
+  visibility: hidden;
   opacity: 0;
   align-items: flex-start;
 }
@@ -165,5 +166,6 @@ header > nav {
   content: url(./img/icon-arrow-up.svg);
 }
 .active > ul {
+  visibility:visible;
   opacity: 1;
 }
